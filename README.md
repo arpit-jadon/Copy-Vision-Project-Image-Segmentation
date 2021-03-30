@@ -4,7 +4,7 @@ Project Group: <br/>
 Arpit Jadon <br/>
 arja00001@stud.uni-saarland.de <br/>
 
-Awantee Deshpande
+Awantee Deshpande <br/>
 s8awdesh@stud.uni-saarland.de
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -18,12 +18,12 @@ In case, the notebook doesn't open in github, please try downloading it and open
 
 Task 2:<br/>
 Implementation of Recurrent Residual Convolutional Neural Network (R2U-Net)<br/>
-Dataset: Cityscapes<br/><br/>
+Dataset: Cityscapes (19 Fine classes)<br/><br/>
 
 Task 3:<br/>
 Using other methodologies to improve results from Task 2.<br/>
 (Architectures implemented: DeepLabV3, UNet3+) <br/>
-Dataset: Cityscapes
+Dataset: Cityscapes (19 Fine classes)
 
 ---------------------------------------------------------------------------------------------------------------------
 
