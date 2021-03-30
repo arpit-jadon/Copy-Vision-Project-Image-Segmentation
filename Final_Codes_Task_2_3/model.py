@@ -125,7 +125,7 @@ class ASPP(nn.Module):
         feature_map_h = feature_map.size()[2] 
         feature_map_w = feature_map.size()[3] 
         
-        # One 1x1 conv followed by three 3x3 conv with dilation rates of
+        # One 1x1 conv followed by three 3x3 conv with atrous rates of
         # 6, 12, and 18 respectively.
         out_1x1 = F.relu(self.bn_conv_1x1_1(self.conv_1x1_1(feature_map))) 
         out_3x3_1 = F.relu(self.bn_conv_3x3_1(self.conv_3x3_1(feature_map))) 
