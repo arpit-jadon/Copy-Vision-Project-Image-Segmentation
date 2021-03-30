@@ -1,5 +1,15 @@
 # Vision-Project-Image-Segmentation
-Starting code for the vision task. <br/><br/>
+
+Project Group: <br/>
+Arpit Jadon <br/>
+arja00001@stud.uni-saarland.de <br/>
+
+Awantee Deshpande
+s8awdesh@stud.uni-saarland.de
+
+---------------------------------------------------------------------------------------------------------------------
+
+This repository contains code for the Vision task for the NNTI Project, Winter Semester 2020/21. <br/><br/>
 
 Task 1: <br/>
 Simple object segmentation on the PASCAL VOC dataset of 21 classes.<br/><br/>
@@ -12,5 +22,19 @@ Dataset: Cityscapes<br/><br/>
 
 Task 3:<br/>
 Using other methodologies to improve results from Task 2.<br/>
+(Architectures implemented: DeepLabV3, UNet3+) <br/>
 Dataset: Cityscapes
+
+---------------------------------------------------------------------------------------------------------------------
+
+The Directory Structure is as follows:
+
+CV_Task_1.ipynb contain the complete notebook for Task 1.
+
+The modules for Tasks 2 and 3, along with the implemented notebooks are present in the folder 'Task_2_3'. The code is implemented in the notebooks CV_Task_2.ipynb, CV_Task_3_DeepLabV3.ipynb, and CV_Task_3_UNet3Plus.ipynb respectively.
+
+Sample predictions with the original images and ground truths are present in the 'Visualisations' folder.
+
+This repository also contains the project report with the description, results, and analysis.
+
 

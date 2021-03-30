@@ -36,6 +36,6 @@ def result_vis(checkpoint_path, dataset, loader, bs, model, device):
                 GT_mask_rgb = dataset.decode_segmap(labels.cpu().numpy()[img_num])
                 plt.imshow(GT_mask_rgb) # Single channel GT mask to RGB Image
 
-                plt.subplot(1,3,3).set_title('Prediction_UNet')
+                plt.subplot(1,3,3).set_title('Prediction')
                 pred_mask_rgb = dataset.decode_segmap(output_2d[img_num])
                 plt.imshow(pred_mask_rgb) # Single channel prediction mask to RGB Image
