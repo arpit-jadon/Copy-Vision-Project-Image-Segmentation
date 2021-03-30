@@ -75,3 +75,53 @@ class RandomVerticallyFlip(object):
         if random.random() < self.p:
             return (img.transpose(Image.FLIP_TOP_BOTTOM), mask.transpose(Image.FLIP_TOP_BOTTOM))
         return img, mask
+
+
+class RandomTranslate(object):
+    def __init__(self, offset):
+        # tuple (delta_x, delta_y)
+        self.offset = offset
+
+    def __call__(self, img, mask):
+        assert img.size == mask.size
+        x_offset = int(2 * (random.random() - 0.5) * self.offset[0])
+        y_offset = int(2 * (random.random() - 0.5) * self.offset[1])
+
+        x_crop_offset = x_offset
+        y_crop_offset = y_offset
+        if x_offset < 0:
+            x_crop_offset = 0
+        if y_offset < 0:
+            y_crop_offset = 0
+
+        cropped_img = tf.crop(
+            img,
+            y_crop_offset,
+            x_crop_offset,
+            img.size[1] - abs(y_offset),
+            img.size[0] - abs(x_offset),
+        )
+
+        if x_offset >= 0 and y_offset >= 0:
+            padding_tuple = (0, 0, x_offset, y_offset)
+
+        elif x_offset >= 0 and y_offset < 0:
+            padding_tuple = (0, abs(y_offset), x_offset, 0)
+
+        elif x_offset < 0 and y_offset >= 0:
+            padding_tuple = (abs(x_offset), 0, 0, y_offset)
+
+        elif x_offset < 0 and y_offset < 0:
+            padding_tuple = (abs(x_offset), abs(y_offset), 0, 0)
+
+        return (
+            tf.pad(cropped_img, padding_tuple, padding_mode="reflect"),
+            tf.affine(
+                mask,
+                translate=(-x_offset, -y_offset),
+                scale=1.0,
+                angle=0.0,
+                shear=0.0,
+                fillcolor=250,
+            ),
+        )

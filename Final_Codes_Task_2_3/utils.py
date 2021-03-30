@@ -53,6 +53,7 @@ def init_weights(net, init_type='normal', gain=0.02):
     net.apply(init_func)
 
 
+
 def visualize_data(batch_sz, loader, dataset_var, data_title):
     dst = dataset_var
     for i, data in enumerate(loader):

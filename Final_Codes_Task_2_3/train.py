@@ -13,7 +13,7 @@ def evaluate(dataset, data_loader, model, epoch, criterion, device):
     # calculate number of batches and init tqdm
     num_batches = int(len(dataset) / data_loader.batch_size)
     tk0 = tqdm(data_loader, total=num_batches)
-    # we need no_grad context of torch. this save memory
+    # we need no_grad context of torch. This saves memory.
     with torch.no_grad():
         for inputs, targets in tk0:
             tk0.set_description(f"Validation Epoch {epoch+1}")
