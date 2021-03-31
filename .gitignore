@@ -3,3 +3,4 @@ build/
 .vs/
 .ipynb_checkpoints/
 .idea/
+__pycache__
