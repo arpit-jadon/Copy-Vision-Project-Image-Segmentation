@@ -6,6 +6,7 @@ from utils import load_checkpoint
 from metrics import eval_metrics
 import torch.nn.functional as F
 
+
 # Modified Cross-Entropy loss
 def CE_loss(output, target):
     n, c, h, w = output.size()
@@ -24,7 +25,8 @@ def CE_loss(output, target):
             loss += (F.cross_entropy(output[i].view(-1, c), target[i].view(-1), reduction='none')).mean()
     return loss
 
-def evaluation(checkpoint_path, dataset, loader, bs, model, device):
+
+def evaluation(checkpoint_path, dataset, loader, bs, model, device, num_classes):
 
     load_checkpoint(checkpoint_path, model)
     model.eval()
@@ -43,7 +45,7 @@ def evaluation(checkpoint_path, dataset, loader, bs, model, device):
             output = torch.sigmoid(model(images))
             output_2d = torch.argmax(output, dim=1).detach().cpu()
             labels = labels.cpu()
-            avg_jacc, avg_dice, f1_score, ov_acc, auc_sc = eval_metrics(labels, output_2d, num_classes=19, batch_sz=bs)
+            avg_jacc, avg_dice, f1_score, ov_acc, auc_sc = eval_metrics(labels, output_2d, num_classes=num_classes, batch_sz=bs)
             avg_jacc_final += avg_jacc.numpy()
             avg_dice_final += avg_dice.numpy()
             f1_score_final += f1_score
