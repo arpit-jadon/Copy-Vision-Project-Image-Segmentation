@@ -3,19 +3,19 @@
 ## This repository contains code for the Vision task for the NNTI Project, Winter Semester 2020/21. 
 ```
 Task 1:
-Simple object segmentation on the PASCAL VOC dataset of 21 classes.<br/><br/>
+Simple object segmentation on the PASCAL VOC dataset of 21 classes.
 We ran the complete notebook with our best configurations before uploading it, and thus all the outputs can be seen directly form the notebook.
 In case, the notebook doesn't open in github, please try downloading and opening it locally.
 ```
 ```
 Task 2:
-Implementation of Recurrent Residual Convolutional Neural Network (R2U-Net)<br/>
-Dataset: Cityscapes (19 Fine classes)<br/><br/>
+Implementation of Recurrent Residual Convolutional Neural Network (R2U-Net)
+Dataset: Cityscapes (19 Fine classes)
 ```
 ```
 Task 3:
-Using other methodologies to improve results from Task 2.<br/>
-(Architectures implemented: DeepLabV3, UNet3+) <br/>
+Using other methodologies to improve results from Task 2.
+(Architectures implemented: DeepLabV3, UNet3+) 
 Dataset: Cityscapes (19 Fine classes)
 ```
 
